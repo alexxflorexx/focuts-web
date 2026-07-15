@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>FOCU(T)S HAIR STUDIO | Barbería de Alta Gama en Valencia</title>
+    <meta name="description" content="Descubre FOCU(T)S HAIR STUDIO, la barbería de alta gama y diseño de imagen masculina de referencia en Valencia. Especialistas en visagismo, corte de autor y arreglo de barba. Reserva tu cita online.">
+    
+    <!-- Fuentes de Lujo de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">    
+    <!-- Tailwind CSS y Lucide Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#000000',
+                            nearblack: '#0a0a0a',
+                            darkgray: '#141414',
+                            mediumgray: '#2c2c2e',
+                            lightgray: '#9a9a9e',
+                            silver: '#e5e5ea',
+                            white: '#ffffff',
+                            gold: '#b0925c',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.4s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        
+        /* Línea divisoria minimalista inspirada en la carta de imagen.png */
+        .menu-divider {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: border-color 0.3s ease;
+        }
+        .menu-divider:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Enlaces de cabecera con color personalizado solicitado */
+        .nav-link {
+            color: #d9d7d7 !important;
+            transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav-link:hover {
+            color: #ffffff !important;
+        }
+        .nav-link.active-link {
+            color: #ffffff !important;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        /* Color de las descripciones en sección de servicios */
+        .service-desc-text {
+            color: #d9d7d7 !important;
+        }
+
+        /* Botón de Reserva Magnético y Animado (Centrado de Alta Conversión) */
+        .magnetic-booking-btn {
+            position: relative;
+            overflow: hidden;
+            background: #ffffff;
+            color: #000000;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+            animation: pulseGlow 3s infinite;
+        }
+
+        .magnetic-booking-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.9),
+                transparent
+            );
+            transition: none;
+        }
+
+        .magnetic-booking-btn:hover::after {
+            left: 150%;
+            transition: all 0.9s ease-in-out;
+        }
+
+        .magnetic-booking-btn:hover {
+            transform: scale(1.04);
+            background-color: #ffffff;
+            box-shadow: 0 0 35px rgba(255, 255, 255, 0.85);
+            color: #000000;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+
+        /* Scroll estético y ocultación de scroll nativo para elementos horizontales */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Transiciones de contenido SPA fluidas */
+        .page-view {
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .page-view.fade-out {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+
+        .hero-video {
+            filter: grayscale(1) contrast(1.08) brightness(0.62) saturate(0);
+            transform: scale(1.04);
+            -webkit-transform: scale(1.04);
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        /* Fix Safari/iOS: contenedor del video con dimensiones explícitas */
+        .hero-video-container {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+
+        .hero-video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            -webkit-object-fit: cover;
+        }
+
+        /* Usar 100dvh (dynamic viewport height) para Safari iOS que no corta el video */
+        .hero-section {
+            min-height: 92vh;
+            min-height: 92dvh;
+        }
+
+        /* Botón sticky de reserva para móvil - siempre visible al hacer scroll */
+        .mobile-sticky-cta {
+            display: none;
+        }
+
+        @media (max-width: 1023px) {
+            .mobile-sticky-cta {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 50;
+                padding: 0.75rem 1rem;
+                padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+                background: rgba(0, 0, 0, 0.92);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-top: 1px solid rgba(255,255,255,0.1);
+                justify-content: center;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .mobile-sticky-cta a {
+                flex: 1;
+                max-width: 320px;
+                text-align: center;
+            }
+
+            /* Compensar el footer en móvil para que no quede tapado */
+            main {
+                padding-bottom: 70px;
+            }
+        }
+
+        .before-after-card {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(18, 18, 18, 0.65);
+            backdrop-filter: blur(6px);
+        }
+
+        .before-after-media {
+            position: relative;
+            min-height: 20rem;
+            overflow: hidden;
+            background: #0d0d0d;
+        }
+
+        .before-after-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .before-after-media:hover img {
+            transform: scale(1.04);
+        }
+
+        .before-after-label {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            z-index: 2;
+            padding: 0.4rem 0.7rem;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 0.58rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+        }
+
+        .before-after-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.45);
+            font-size: 1.2rem;
+            letter-spacing: 0.35em;
+            padding: 0.25rem 0;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .before-after-description {
+            padding: 1.1rem 1.25rem 1.25rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.22);
+        }
+
+        .product-media {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .product-media img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            object-position: center;
+            background: #0d0d0d;
+        }
+
+        .product-card-title {
+            min-height: 2.8rem;
+            line-height: 1.2;
+        }
+    </style>
+
+    <!-- Schema.org SEO Local Avanzado para Motores de Búsqueda -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "HairSalon",
+          "@id": "https://focuts-hairstudio.es/#salon",
+          "name": "FOCU(T)S HAIR STUDIO",
+          "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200",
+          "telephone": "+34960236147",
+          "url": "https://focuts-hairstudio.es",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "C. Joaquín Costa, 54, Bajo 3º Izquierda",
+            "addressLocality": "Valencia",
+            "postalCode": "46005",
+            "addressCountry": "ES"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.462311",
+            "longitude": "-0.369325"
+          },
+          "priceRange": "$$",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "10:00",
+              "closes": "20:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "10:00",
+              "closes": "14:00"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="font-sans antialiased bg-brand-black text-brand-silver flex flex-col min-h-screen selection:bg-white selection:text-black">
+
+    <!-- Barra de Navegación Fija Adaptada (Mobile & Desktop) -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 md:py-6 px-4 sm:px-8 md:px-12 border-b border-white/5 bg-black/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            
+            <!-- Logotipo Editorial de Lujo -->
+            <a href="#/inicio" class="flex flex-col items-start group">
+                <span class="font-serif text-lg md:text-2xl tracking-[0.2em] text-white group-hover:text-brand-lightgray transition-colors font-bold">
+                    FOCU<span class="text-white/50 font-light">(</span>T<span class="text-white/50 font-light">)</span>S
+                </span>
+                <span class="text-[0.5rem] md:text-[0.58rem] tracking-[0.45em] text-brand-lightgray uppercase font-light -mt-1 block">
+                    HAIR STUDIO
+                </span>
+            </a>
+
+            <!-- Navegación para Ordenadores y Tablets Grandes con Color Solicitado (#d9d7d7) -->
+            <nav class="hidden lg:flex items-center space-x-0.5 xl:space-x-1">
+                <a href="#/inicio" class="nav-link px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.18em]">Inicio</a>
+                <a href="#/equipo" class="nav-link px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.18em]">Equipo</a>
+                <a href="#/servicios" class="nav-link px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.18em]">Servicios</a>
+                <a href="#/asesoria" class="nav-link px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.18em]">Asesoría</a>
+                <a href="#/galeria" class="nav-link px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.18em]">Galería</a>
+                <a href="#/resenas" class="nav-link px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.18em]">Opiniones</a>
+                <a href="#/contacto" class="nav-link px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.18em]">Contacto</a>
+                <a href="#/faq" class="nav-link px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.18em]">Preguntas</a>
+            </nav>
+
+            <!-- CTA Premium en Cabecera para Escritorio -->
+            <div class="hidden sm:block">
+                <a href="https://cut.yeasyapp.com/tbTmsH" target="_blank" rel="noopener noreferrer" class="magnetic-booking-btn inline-block px-5 py-3 rounded-none text-[0.62rem] uppercase tracking-[0.15em] transition-transform">
+                    Reservar Cita
+                </a>
+            </div>
+
+            <!-- Botón del Menú Móvil con Respuesta Táctil Óptima -->
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir Menú de Navegación" class="lg:hidden p-2 text-white hover:text-brand-lightgray focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+</header>
+        <!-- Panel del Menú Móvil Lateral/Completo - AHORA EN COLOR BLANCO (#ffffff) PARA QUE NO SE MEZCLE -->
+        <div id="mobile-menu" class="hidden fixed inset-0 z-[9999] bg-white flex flex-col justify-between p-6 sm:p-10 transition-all duration-300">
+            <div>
+                <div class="flex items-center justify-between mb-12">
+                    <div class="flex flex-col items-start">
+                        <span class="font-serif text-xl tracking-[0.2em] text-black font-bold">
+                            FOCU<span class="text-black/50 font-light">(</span>T<span class="text-black/50 font-light">)</span>S
+                        </span>
+                        <span class="text-[0.55rem] tracking-[0.4em] text-black/60 uppercase font-light">HAIR STUDIO</span>
+                    </div>
+                    <button id="mobile-menu-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar Menú" class="p-2 text-black hover:text-black/60 focus:outline-none">
+                        <i data-lucide="x" class="w-7 h-7"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col space-y-4 sm:space-y-5">
+                    <a href="#/inicio" onclick="toggleMobileMenu(false)" class="mobile-nav-link text-base sm:text-lg uppercase tracking-widest text-black hover:text-black/60 border-b border-black/5 pb-2 transition-colors">Inicio</a>
+                    <a href="#/equipo" onclick="toggleMobileMenu(false)" class="mobile-nav-link text-base sm:text-lg uppercase tracking-widest text-black hover:text-black/60 border-b border-black/5 pb-2 transition-colors">Equipo</a>
+                    <a href="#/servicios" onclick="toggleMobileMenu(false)" class="mobile-nav-link text-base sm:text-lg uppercase tracking-widest text-black hover:text-black/60 border-b border-black/5 pb-2 transition-colors">Servicios</a>
+                    <a href="#/asesoria" onclick="toggleMobileMenu(false)" class="mobile-nav-link text-base sm:text-lg uppercase tracking-widest text-black hover:text-black/60 border-b border-black/5 pb-2 transition-colors">Asesoría</a>
+                    <a href="#/galeria" onclick="toggleMobileMenu(false)" class="mobile-nav-link text-base sm:text-lg uppercase tracking-widest text-black hover:text-black/60 border-b border-black/5 pb-2 transition-colors">Galería</a>
+                    <a href="#/resenas" onclick="toggleMobileMenu(false)" class="mobile-nav-link text-base sm:text-lg uppercase tracking-widest text-black hover:text-black/60 border-b border-black/5 pb-2 transition-colors">Opiniones</a>
+                    <a href="#/contacto" onclick="toggleMobileMenu(false)" class="mobile-nav-link text-base sm:text-lg uppercase tracking-widest text-black hover:text-black/60 border-b border-black/5 pb-2 transition-colors">Contacto</a>
+                    <a href="#/faq" onclick="toggleMobileMenu(false)" class="mobile-nav-link text-base sm:text-lg uppercase tracking-widest text-black hover:text-black/60 border-b border-black/5 pb-2 transition-colors">Preguntas</a>
+                </div>
+            </div>
+            <div class="pt-6 border-t border-black/5">
+                <a href="https://cut.yeasyapp.com/tbTmsH" target="_blank" rel="noopener noreferrer" class="w-full text-center py-4 bg-black text-white hover:bg-neutral-800 transition-colors uppercase tracking-[0.2em] text-xs font-bold block">
+                    Reservar Cita Online
+                </a>
+            </div>
+        </div>
+    
+
+    <!-- Contenedor Principal Adaptativo -->
+    <main class="flex-grow pt-16 md:pt-20">
+        <div id="view-container" class="page-view animate-fade-in w-full">
+            <!-- Los contenidos se inyectan dinámicamente mediante JS -->
+        </div>
+    </main>
+
+    <!-- Plantillas HTML para el ruteador de la Web (Templates) -->
+    <div class="hidden">
+        
+        <!-- VISTA: INICIO -->
+        <template id="view-inicio">
+            <!-- Portada de Gran Impacto y Composición Espacial de Lujo (Modificada con fondo claro) -->
+            <section class="hero-section relative flex items-center justify-center overflow-hidden py-16 px-4 md:px-8">
+                <!-- Video de fondo con reproducción silenciosa y ajuste elegante -->
+                <div class="hero-video-container bg-black">
+                    <video
+                        class="hero-video"
+                        src="videos/video.mp4"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        webkit-playsinline
+                        preload="auto"
+                        aria-hidden="true"
+                    ></video>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/10"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.09),transparent_70%)]"></div>
+                </div>
+
+                <!-- Contenido Principal Completamente Centrado (Perfecto para Mobile/Tablet/Desktop) -->
+                <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+                    <div class="mb-4 sm:mb-6 animate-slide-up" style="animation-delay: 50ms;">
+                        
+                    </div>
+
+                    <!-- FOCU(T)S HAIR STUDIO como encabezado principal suntuoso -->
+                    <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight text-white font-extrabold mb-6 animate-slide-up leading-none flex flex-col items-center" style="animation-delay: 150ms;">
+                        <span>FOCU(T)S</span>
+                        <span class="text-white/90 font-light italic text-4xl sm:text-6xl md:text-7xl lg:text-8xl mt-2 tracking-wide font-serif">HAIR STUDIO</span>
+                    </h1>
+
+                    <!-- Frase independiente, separada del nombre y de la descripción -->
+                    <span class="text-[0.6rem] sm:text-xs uppercase tracking-[0.45em] text-brand-silver font-semibold block mb-8 sm:mb-10 animate-slide-up" style="animation-delay: 220ms;">It’s not just a name.</span>
+
+                    <p class="max-w-xl text-xs sm:text-sm md:text-base text-brand-silver font-light leading-relaxed mb-10 sm:mb-14 px-4 animate-slide-up" style="animation-delay: 280ms;">
+                        No cortamos el cabello; diseñamos identidades mediante el visagismo, cortes de precisión y asesoría personalizada.
+                    </p>
+
+                    <!-- Botón de reserva destacado y completamente centrado -->
+                    <div class="flex flex-col items-center justify-center w-full max-w-xs sm:max-w-sm mx-auto px-4 animate-slide-up" style="animation-delay: 350ms;">
+                        <a href="https://cut.yeasyapp.com/tbTmsH" target="_blank" rel="noopener noreferrer" class="magnetic-booking-btn w-full inline-flex items-center justify-center px-8 py-4 sm:py-5 text-[0.68rem] uppercase tracking-[0.25em] mb-6">
+                            Reserva tu cita
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                        <a href="#/servicios" class="text-brand-lightgray hover:text-white transition-colors duration-200 text-[0.62rem] uppercase tracking-[0.2em] underline decoration-white/20 hover:decoration-white underline-offset-8">
+                            Descubrir Servicios
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Indicador de Desplazamiento Sutil -->
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center">
+                    <div class="w-[1px] h-10 bg-white/30 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1/2 bg-white animate-bounce"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Barra de Confianza / Datos Clave (sutil, sin sobre-remarcar) -->
+            <section class="border-t border-b border-white/5 bg-brand-nearblack/30">
+                <div class="max-w-5xl mx-auto px-4 sm:px-8 py-6 sm:py-7">
+                    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 sm:gap-x-12 text-center">
+                        <div class="flex items-center gap-2">
+                            <span class="text-white tracking-[0.1em] text-xs sm:text-sm">★★★★★</span>
+                            <span class="text-brand-lightgray text-[0.68rem] sm:text-xs uppercase tracking-[0.15em]">4,9/5</span>
+                        </div>
+                        <span class="hidden sm:block w-[1px] h-4 bg-white/10"></span>
+                        <span class="text-brand-lightgray text-[0.68rem] sm:text-xs uppercase tracking-[0.15em]">+800 clientes satisfechos</span>
+                        <span class="hidden sm:block w-[1px] h-4 bg-white/10"></span>
+                        <span class="text-brand-lightgray text-[0.68rem] sm:text-xs uppercase tracking-[0.15em]">+5 años creando cortes personalizados</span>
+                        <span class="hidden sm:block w-[1px] h-4 bg-white/10"></span>
+                        <span class="text-brand-lightgray text-[0.68rem] sm:text-xs uppercase tracking-[0.15em]">Especialistas en visagismo masculino</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: ¿Por qué Focu(T)s? (integrada en Inicio, con iconos minimalistas hechos en código) -->
+            <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14 md:mb-20">
+                    <span class="text-[0.62rem] uppercase tracking-[0.4em] text-brand-lightgray block mb-3 font-semibold">LA DIFERENCIA FOCU(T)S</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white tracking-tight mb-6">¿Por qué Focu(T)s?</h2>
+                    <div class="w-12 h-[1px] bg-white/20 mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-8">
+
+                    <!-- Icono 1: No copiamos tendencias -->
+                    <div class="flex flex-col items-center text-center px-2 sm:border-r sm:border-white/10">
+                        <img src="images/iconos/icono-1.png" alt="No copiamos tendencias" class="w-16 h-16 sm:w-20 sm:h-20 mb-6 object-contain">
+                        <h3 class="font-serif text-base sm:text-lg text-white mb-2 tracking-wide">No copiamos tendencias.</h3>
+                        <p class="service-desc-text text-xs sm:text-sm font-light leading-relaxed max-w-xs">Creamos estilos adaptados a cada rostro.</p>
+                    </div>
+
+                    <!-- Icono 2: Analizamos antes de cortar -->
+                    <div class="flex flex-col items-center text-center px-2 sm:border-r sm:border-white/10">
+                        <img src="images/iconos/icono-2.png" alt="Analizamos antes de cortar" class="w-16 h-16 sm:w-20 sm:h-20 mb-6 object-contain">
+                        <h3 class="font-serif text-base sm:text-lg text-white mb-2 tracking-wide">Analizamos antes de cortar.</h3>
+                        <p class="service-desc-text text-xs sm:text-sm font-light leading-relaxed max-w-xs">Cada decisión tiene un porqué.</p>
+                    </div>
+
+                    <!-- Icono 3: La imagen importa -->
+                    <div class="flex flex-col items-center text-center px-2">
+                        <img src="images/iconos/icono-3.jpeg" alt="La imagen importa" class="w-16 h-16 sm:w-20 sm:h-20 mb-6 object-contain">
+                        <h3 class="font-serif text-base sm:text-lg text-white mb-2 tracking-wide">La imagen importa.</h3>
+                        <p class="service-desc-text text-xs sm:text-sm font-light leading-relaxed max-w-xs">Potenciamos cómo te ves y cómo te perciben.</p>
+                    </div>
+
+                </div>
+            </section>
+        </template>
+
+
+        <!-- VISTA: EQUIPO -->
+        <template id="view-equipo">
+            <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+                    <span class="text-[0.62rem] uppercase tracking-[0.4em] text-brand-lightgray block mb-3 font-semibold">NUESTROS MAESTROS</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white tracking-tight mb-6">El Equipo</h2>
+                    <div class="w-12 h-[1px] bg-white/20 mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+                    <!-- Jorge -->
+                    <div class="border border-white/5 bg-brand-nearblack/40 p-6 sm:p-8 flex flex-col justify-between hover:border-white/10 transition-all">
+                        <div>
+                            <div class="aspect-[4/5] bg-brand-darkgray overflow-hidden mb-6 relative">
+                                <img src="images/30379.jpg" alt="Jorge Barber" class="w-full h-full object-cover filter grayscale opacity-75">
+                            </div>
+                            <h3 class="font-serif text-xl sm:text-2xl text-white mb-1">Jorge</h3>
+                            <p class="text-[0.62rem] uppercase tracking-widest text-brand-lightgray mb-4 font-semibold">Especialista en asesoría y cortes a tijera</p>
+                            <p class="service-desc-text text-xs sm:text-sm font-light leading-relaxed mb-6">
+                              “Cada persona necesita un estilo diferente. Mi trabajo es encontrar el suyo.”  
+                            </p>
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                            <a href="https://www.instagram.com/jorge_gutierrezz_"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-[0.62rem] uppercase tracking-widest text-brand-lightgray mb-4 font-semibold hover:text-white transition-colors inline-block">
+                            @jorge_gutierrezz_
+                            </a>
+                        </div>
+                        <a href="https://cut.yeasyapp.com/tbTmsH" target="_blank" rel="noopener noreferrer" class="magnetic-booking-btn block text-center py-3.5 text-[0.62rem] uppercase tracking-widest">
+                            Reservar con Jorge
+                        </a>
+                    </div>
+
+                    <!-- Pablo -->
+                    <div class="border border-white/5 bg-brand-nearblack/40 p-6 sm:p-8 flex flex-col justify-between hover:border-white/10 transition-all">
+                        <div>
+                            <div class="aspect-[4/5] bg-brand-darkgray overflow-hidden mb-6 relative">
+                                <img src="images/30378.jpg" alt="Pablo Barber" class="w-full h-full object-cover filter grayscale opacity-75">
+                            </div>
+                            <h3 class="font-serif text-xl sm:text-2xl text-white mb-1">Pablo</h3>
+                            <p class="text-[0.62rem] uppercase tracking-widest text-brand-lightgray mb-4 font-semibold">Enfocado en creatividad, color y estilo</p>
+                            <p class="service-desc-text text-xs sm:text-sm font-light leading-relaxed mb-6">
+                                "Cada corte tiene que encajar con la persona, no al revés."
+                            </p>
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                            <a href="https://www.instagram.com/pablosanchizz"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-[0.62rem] uppercase tracking-widest text-brand-lightgray mb-4 font-semibold hover:text-white transition-colors inline-block">
+    @Pablosanchizz
+</a>
+                        </div>
+                        <a href="https://cut.yeasyapp.com/tbTmsH" target="_blank" rel="noopener noreferrer" class="magnetic-booking-btn block text-center py-3.5 text-[0.62rem] uppercase tracking-widest">
+                            Reservar con Pablo
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+
+        <!-- VISTA: SERVICIOS -->
+        <template id="view-servicios">
+            <section class="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white tracking-tight mb-6">Servicios y productos</h2>
+                </div>
+
+                <!-- CATEGORÍA 1: EXPERIENCIAS DE AUTOR -->
+                <div class="mb-16 md:mb-20">
+                    <div class="mb-10">
+                        <h3 class="font-serif text-xl sm:text-2xl text-white tracking-wide">Experiencias Integrales</h3>
+                        <p class="text-brand-lightgray text-xs italic font-light mt-1">Servicios completos de imagen, relajación y desconexión.</p>
+                        <div class="w-full h-[1px] bg-white/10 mt-3"></div>
+                    </div>
+                    <div class="space-y-8 md:space-y-10" id="servicios-experiencias">
+                        <!-- Inyectado dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- CATEGORÍA 2: CORTES & DISEÑO -->
+                <div class="mb-16 md:mb-20">
+                    <div class="mb-10">
+                        <h3 class="font-serif text-xl sm:text-2xl text-white tracking-wide">Cortes & Estructura</h3>
+                        <p class="text-brand-lightgray text-xs italic font-light mt-1">Arquitectura craneal aplicada al cabello masculino.</p>
+                        <div class="w-full h-[1px] bg-white/10 mt-3"></div>
+                    </div>
+                    <div class="space-y-8 md:space-y-10" id="servicios-cortes">
+                        <!-- Inyectado dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- CATEGORÍA 3: BARBA & DETALLES -->
+                <div class="mb-16 md:mb-20">
+                    <div class="mb-10">
+                        <h3 class="font-serif text-xl sm:text-2xl text-white tracking-wide">Cuidado Facial & Barba</h3>
+                        <p class="text-brand-lightgray text-xs italic font-light mt-1">Definición y esculpido de los contornos del rostro.</p>
+                        <div class="w-full h-[1px] bg-white/10 mt-3"></div>
+                    </div>
+                    <div class="space-y-8 md:space-y-10" id="servicios-barbas">
+                        <!-- Inyectado dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- CATEGORÍA 4: TÉCNICAS, COLOR & QUÍMICOS -->
+                <div class="mb-16 md:mb-20">
+                    <div class="mb-10">
+                        <h3 class="font-serif text-xl sm:text-2xl text-white tracking-wide">Color, Textura & Tratamientos</h3>
+                        <p class="text-brand-lightgray text-xs italic font-light mt-1">Servicios técnicos avanzados con protección capilar de primera línea.</p>
+                        <div class="w-full h-[1px] bg-white/10 mt-3"></div>
+                    </div>
+                    <div class="space-y-8 md:space-y-10" id="servicios-quimicos">
+                        <!-- Inyectado dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- CATEGORÍA 5: PRODUCTOS Y CUIDADO -->
+                <div class="mb-16 md:mb-20">
+                    <div class="mb-10">
+                        <h3 class="font-serif text-xl sm:text-2xl text-white tracking-wide">Productos Seleccionados</h3>
+                        <p class="text-brand-lightgray text-xs italic font-light mt-1">Herramientas, cuidados y productos que usamos para proteger y potenciar el resultado.</p>
+                        <div class="w-full h-[1px] bg-white/10 mt-3"></div>
+                    </div>
+
+                    <div class="space-y-8 md:space-y-10">
+                        <div class="menu-divider pb-5 flex flex-row justify-between items-start gap-4 w-full">
+                            <div class="flex-1 space-y-2 pr-4">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="font-serif text-sm sm:text-base text-white font-semibold tracking-wide">TEXTURIZING POWDER</h4>
+                                </div>
+                                <button id="prod-btn-1" onclick="toggleProductDesc('1')" class="text-[0.65rem] uppercase tracking-wider text-brand-lightgray hover:text-white underline decoration-white/20 underline-offset-4 focus:outline-none block">
+                                    Ver descripción
+                                </button>
+                                <p id="prod-content-1" class="hidden service-desc-text text-[0.68rem] sm:text-xs font-light leading-relaxed max-w-2xl mt-2">
+                                    Nunca un polvo te dejó tan satisfecho. Con su acabado mate y textura natural, crea volumen desde las raíces sin apelmazar el cabello.
+                                </p>
+                            </div>
+                            <div class="text-right whitespace-nowrap pt-1">
+                                <span class="font-serif text-sm sm:text-base text-white font-semibold block mb-2">17€</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-divider pb-5 flex flex-row justify-between items-start gap-4 w-full">
+                            <div class="flex-1 space-y-2 pr-4">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="font-serif text-sm sm:text-base text-white font-semibold tracking-wide">MATTE WAX</h4>
+                                </div>
+                                <button id="prod-btn-2" onclick="toggleProductDesc('2')" class="text-[0.65rem] uppercase tracking-wider text-brand-lightgray hover:text-white underline decoration-white/20 underline-offset-4 focus:outline-none block">
+                                    Ver descripción
+                                </button>
+                                <p id="prod-content-2" class="hidden service-desc-text text-[0.68rem] sm:text-xs font-light leading-relaxed max-w-2xl mt-2">
+                                    Nuestra cera mate de fijación media aporta un acabado natural, con un resultado limpio, controlado y muy fácil de trabajar.
+                                </p>
+                            </div>
+                            <div class="text-right whitespace-nowrap pt-1">
+                                <span class="font-serif text-sm sm:text-base text-white font-semibold block mb-2">17€</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-divider pb-5 flex flex-row justify-between items-start gap-4 w-full">
+                            <div class="flex-1 space-y-2 pr-4">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="font-serif text-sm sm:text-base text-white font-semibold tracking-wide">Shine Wax</h4>
+                                </div>
+                                <button id="prod-btn-3" onclick="toggleProductDesc('3')" class="text-[0.65rem] uppercase tracking-wider text-brand-lightgray hover:text-white underline decoration-white/20 underline-offset-4 focus:outline-none block">
+                                    Ver descripción
+                                </button>
+                                <p id="prod-content-3" class="hidden service-desc-text text-[0.68rem] sm:text-xs font-light leading-relaxed max-w-2xl mt-2">
+                                    Brilla de la forma más elegante con una fijación alta que mantiene el estilo intacto durante todo el día.
+                                </p>
+                            </div>
+                            <div class="text-right whitespace-nowrap pt-1">
+                                <span class="font-serif text-sm sm:text-base text-white font-semibold block mb-2">17€</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-divider pb-5 flex flex-row justify-between items-start gap-4 w-full">
+                            <div class="flex-1 space-y-2 pr-4">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="font-serif text-sm sm:text-base text-white font-semibold tracking-wide">Styling Water</h4>
+                                </div>
+                                <button id="prod-btn-4" onclick="toggleProductDesc('4')" class="text-[0.65rem] uppercase tracking-wider text-brand-lightgray hover:text-white underline decoration-white/20 underline-offset-4 focus:outline-none block">
+                                    Ver descripción
+                                </button>
+                                <p id="prod-content-4" class="hidden service-desc-text text-[0.68rem] sm:text-xs font-light leading-relaxed max-w-2xl mt-2">
+                                    Un spray voluminizador pensado para aportar cuerpo y densidad visual desde la raíz, ideal para conseguir un acabado más amplio y con movimiento natural.
+                                </p>
+                            </div>
+                            <div class="text-right whitespace-nowrap pt-1">
+                                <span class="font-serif text-sm sm:text-base text-white font-semibold block mb-2">17€</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-divider pb-5 flex flex-row justify-between items-start gap-4 w-full">
+                            <div class="flex-1 space-y-2 pr-4">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="font-serif text-sm sm:text-base text-white font-semibold tracking-wide">Shaving Gel</h4>
+                                </div>
+                                <button id="prod-btn-5" onclick="toggleProductDesc('5')" class="text-[0.65rem] uppercase tracking-wider text-brand-lightgray hover:text-white underline decoration-white/20 underline-offset-4 focus:outline-none block">
+                                    Ver descripción
+                                </button>
+                                <p id="prod-content-5" class="hidden service-desc-text text-[0.68rem] sm:text-xs font-light leading-relaxed max-w-2xl mt-2">
+                                    Un gel transparente con frescura inmediata, perfecto para afeitados suaves, limpios y con una sensación de confort muy marcada.
+                                </p>
+                            </div>
+                            <div class="text-right whitespace-nowrap pt-1">
+                                <span class="font-serif text-sm sm:text-base text-white font-semibold block mb-2">17€</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-divider pb-5 flex flex-row justify-between items-start gap-4 w-full">
+                            <div class="flex-1 space-y-2 pr-4">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="font-serif text-sm sm:text-base text-white font-semibold tracking-wide">After Shave</h4>
+                                </div>
+                                <button id="prod-btn-6" onclick="toggleProductDesc('6')" class="text-[0.65rem] uppercase tracking-wider text-brand-lightgray hover:text-white underline decoration-white/20 underline-offset-4 focus:outline-none block">
+                                    Ver descripción
+                                </button>
+                                <p id="prod-content-6" class="hidden service-desc-text text-[0.68rem] sm:text-xs font-light leading-relaxed max-w-2xl mt-2">
+                                    Finaliza el afeitado con un acabado fresco y cuidado, con una textura ligera y un aroma que completa la experiencia de la rutina premium.
+                                </p>
+                            </div>
+                            <div class="text-right whitespace-nowrap pt-1">
+                                <span class="font-serif text-sm sm:text-base text-white font-semibold block mb-2">17€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón de Reserva de Alta Conversión al final de la Carta -->
+                <div class="mt-20 text-center">
+                    <a href="https://cut.yeasyapp.com/tbTmsH" target="_blank" rel="noopener noreferrer" class="magnetic-booking-btn inline-flex items-center px-10 py-5 text-xs uppercase tracking-[0.2em] rounded-none">
+                        Reservar Cita Online Ahora
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </section>
+        </template>
+
+
+        <!-- VISTA: ASESORIA -->
+        <template id="view-asesoria">
+            <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+                    <span class="text-[0.62rem] uppercase tracking-[0.4em] text-brand-lightgray block mb-3 font-semibold">LA DIFERENCIA EXCLUSIVA</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white tracking-tight mb-6">Asesoría de Imagen</h2>
+                    <p class="text-brand-lightgray text-sm sm:text-base leading-relaxed font-light max-w-3xl mx-auto">
+                        En FOCU(T)S creemos que una buena imagen empieza antes del primer corte. Por eso analizamos cada detalle para crear un estilo adaptado a tus rasgos, tu personalidad y la imagen que quieres proyectar.
+                    </p>
+                    <div class="w-12 h-[1px] bg-white/20 mx-auto mt-6"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+                    <div class="p-6 sm:p-8 border border-white/5 bg-brand-nearblack/20 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[0.58rem] uppercase tracking-[0.2em] text-brand-lightgray block mb-4 font-semibold">Visagismo</span>
+                            <h3 class="font-serif text-lg text-white mb-3">Estudio Facial</h3>
+                            <p class="service-desc-text text-xs sm:text-sm leading-relaxed font-light">
+                                Analizamos la forma de tu rostro, tus proporciones y tu estructura ósea para recomendar el corte y la barba que mejor encajan contigo. No buscamos seguir tendencias, sino encontrar el estilo que realmente te favorece.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 border border-white/5 bg-brand-nearblack/20 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[0.58rem] uppercase tracking-[0.2em] text-brand-lightgray block mb-4 font-semibold">Colorimetría</span>
+                            <h3 class="font-serif text-lg text-white mb-3">Análisis del Color</h3>
+                            <p class="service-desc-text text-xs sm:text-sm leading-relaxed font-light">
+                                Seleccionamos los tonos, reflejos o mechas que mejor armonizan con tu tono de piel, ojos y cabello para conseguir un resultado natural, equilibrado y adaptado a tu imagen.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 border border-white/5 bg-brand-nearblack/20 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[0.58rem] uppercase tracking-[0.2em] text-brand-lightgray block mb-4 font-semibold">Estructura facial</span>
+                            <h3 class="font-serif text-lg text-white mb-3">Diseño de Imagen</h3>
+                            <p class="service-desc-text text-xs sm:text-sm leading-relaxed font-light">
+                                Diseñamos una imagen completa teniendo en cuenta tus facciones, tu tipo de cabello, tu estilo de vida y el resultado que quieres conseguir. El objetivo es crear un estilo equilibrado, favorecedor y fácil de mantener.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+                    <div class="md:col-start-2 p-6 sm:p-8 border border-white/5 bg-brand-nearblack/20 flex flex-col justify-between h-full">
+                        <div>
+                            <span class="text-[0.58rem] uppercase tracking-[0.2em] text-brand-lightgray block mb-4 font-semibold">Asesoramiento</span>
+                            <h3 class="font-serif text-lg text-white mb-3">Mantenimiento y Cuidado</h3>
+                            <p class="service-desc-text text-xs sm:text-sm leading-relaxed font-light">
+                                Te recomendamos cómo peinar tu cabello, qué productos utilizar y cómo mantener el resultado en casa para que tu imagen siga viéndose impecable entre visitas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center border-t border-white/10 pt-8">
+                    <p class="font-serif text-xl sm:text-2xl text-white tracking-wide leading-relaxed">
+                        No diseñamos cortes. Diseñamos la imagen que mejor encaja contigo.
+                    </p>
+                    <p class="mt-3 text-[0.62rem] uppercase tracking-[0.35em] text-brand-lightgray font-semibold">FOCU(T)S</p>
+                </div>
+
+                <!-- BOTÓN: Comienza tu asesoría -->
+                <div class="mt-12 text-center">
+                    <button onclick="toggleAsesoriaForm(true)" class="magnetic-booking-btn inline-flex items-center px-10 py-5 text-xs uppercase tracking-[0.2em]">
+                        Comienza tu asesoría
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- FORMULARIO: Se oculta hasta que se pulsa el botón -->
+                <div id="asesoria-form-wrapper" class="hidden mt-16 border border-white/5 bg-brand-nearblack/20 p-6 sm:p-8 lg:p-10">
+
+                    <div class="text-center mb-10">
+                        <span class="text-[0.62rem] uppercase tracking-[0.4em] text-brand-lightgray block mb-3 font-semibold">PASO 1 DE 2</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl text-white tracking-tight mb-4">Cuéntanos sobre ti</h3>
+                        <p class="text-brand-lightgray text-xs sm:text-sm font-light max-w-xl mx-auto">
+                            Responde estas preguntas y sube tus fotos. Con toda la información crearemos tu dossier de asesoría personalizado.
+                        </p>
+                        <div class="w-12 h-[1px] bg-white/20 mx-auto mt-4"></div>
+                    </div>
+
+                    <form id="asesoria-form" class="space-y-8" onsubmit="submitAsesoriaForm(event)">
+
+                        <!-- Fotos -->
+                        <div>
+                            <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-2 font-semibold">1. Tus fotos</label>
+                            <p class="text-brand-lightgray text-[0.65rem] font-light mb-3">Sube al menos 2 fotos: frontal y de perfil. Selecciona todas las que quieras.</p>
+                            <label for="asesoria-fotos" class="cursor-pointer border border-dashed border-white/20 hover:border-white/40 p-6 text-center transition-colors block">
+                                <i data-lucide="upload" class="w-6 h-6 mx-auto mb-2 text-brand-lightgray"></i>
+                                <span class="text-[0.62rem] uppercase tracking-widest text-brand-lightgray">Pulsa para subir fotos</span>
+                                <input type="file" id="asesoria-fotos" multiple accept="image/*" class="hidden" onchange="handleAsesoriaPhotos(this)">
+                            </label>
+                            <div id="asesoria-photo-preview" class="grid grid-cols-3 sm:grid-cols-4 gap-2 mt-3"></div>
+                        </div>
+
+                        <!-- Datos básicos -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">2. ¿Cómo te llamas?</label>
+                                <input type="text" name="nombre" required class="w-full bg-transparent border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none" placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">3. ¿Qué edad tienes?</label>
+                                <input type="number" name="edad" required min="10" max="100" class="w-full bg-transparent border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none" placeholder="Ej: 28">
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">4. ¿A qué te dedicas?</label>
+                                <input type="text" name="profesion" class="w-full bg-transparent border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none" placeholder="Ej: Emprendedor, albañil, estudiante...">
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">5. ¿Estás estudiando?</label>
+                                <select name="estudiando" class="w-full bg-brand-nearblack border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none">
+                                    <option value="">Selecciona...</option>
+                                    <option value="No">No</option>
+                                    <option value="Sí, FP">Sí, FP</option>
+                                    <option value="Sí, Universidad">Sí, Universidad</option>
+                                    <option value="Sí, Oposiciones">Sí, Oposiciones</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Estilo -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div class="sm:col-span-2">
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">6. ¿Qué estilo te gusta más?</label>
+                                <select name="estilo_preferido" class="w-full bg-brand-nearblack border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none">
+                                    <option value="">Selecciona...</option>
+                                    <option value="Deportivo">Deportivo</option>
+                                    <option value="Casual / Urbano">Casual / Urbano</option>
+                                    <option value="Elegante / Formal">Elegante / Formal</option>
+                                    <option value="Old Money / Quiet Luxury">Old Money / Quiet Luxury</option>
+                                    <option value="Streetwear">Streetwear</option>
+                                    <option value="Minimalista">Minimalista</option>
+                                    <option value="Mixto / No sé">Mixto / No sé</option>
+                                </select>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">7. ¿Con cuál te identificas más?</label>
+                                <select name="identidad_estilo" class="w-full bg-brand-nearblack border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none">
+                                    <option value="">Selecciona...</option>
+                                    <option value="Alguien cuidado y elegante">Alguien cuidado y elegante</option>
+                                    <option value="Alguken natural y relajado">Alguken natural y relajado</option>
+                                    <option value="Alguien moderno y atrevido">Alguien moderno y atrevido</option>
+                                    <option value="Alguien profesional y serio">Alguien profesional y serio</option>
+                                    <option value="Alguien deportivo y dinámico">Alguien deportivo y dinámico</option>
+                                    <option value="No lo tengo claro">No lo tengo claro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Cabello y barba -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">8. Tipo de cabello</label>
+                                <select name="tipo_cabello" class="w-full bg-brand-nearblack border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none">
+                                    <option value="">Selecciona...</option>
+                                    <option value="Liso">Liso</option>
+                                    <option value="Ondulado">Ondulado</option>
+                                    <option value="Rizado">Rizado</option>
+                                    <option value="Muy rizado">Muy rizado</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">9. ¿Tienes entradas?</label>
+                                <select name="entradas" class="w-full bg-brand-nearblack border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none">
+                                    <option value="">Selecciona...</option>
+                                    <option value="No tengo">No tengo</option>
+                                    <option value="Leves">Leves</option>
+                                    <option value="Marcadas">Marcadas</option>
+                                    <option value="Avanzadas">Avanzadas</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">10. ¿Cómo llevas la barba?</label>
+                                <select name="barba" class="w-full bg-brand-nearblack border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none">
+                                    <option value="">Selecciona...</option>
+                                    <option value="Afeitado">Afeitado</option>
+                                    <option value="Barba de 1-3 días">Barba de 1-3 días</option>
+                                    <option value="Barba corta definida">Barba corta definida</option>
+                                    <option value="Barba media/larga">Barba media/larga</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">11. ¿Usas gafas?</label>
+                                <select name="gafas" class="w-full bg-brand-nearblack border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none">
+                                    <option value="">Selecciona...</option>
+                                    <option value="No">No</option>
+                                    <option value="Gafas de vista">Gafas de vista</option>
+                                    <option value="Gafas de sol">Gafas de sol</option>
+                                    <option value="Ambas">Ambas</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Preferencias -->
+                        <div class="space-y-5">
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">12. ¿Qué aspectos de tu imagen te gustan más?</label>
+                                <textarea name="me_gusta" rows="2" class="w-full bg-transparent border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none resize-none" placeholder="Ej: Mis ojos, la mandíbula, las cejas..."></textarea>
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">13. ¿Qué aspectos de tu imagen te gustan menos?</label>
+                                <textarea name="no_me_gusta" rows="2" class="w-full bg-transparent border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none resize-none" placeholder="Ej: Entradas, barba irregular, cara redonda..."></textarea>
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">14. ¿Qué imagen quieres proyectar?</label>
+                                <input type="text" name="imagen_objetivo" class="w-full bg-transparent border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none" placeholder="Ej: Profesional, elegante, moderna, juvenil...">
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">15. ¿Hay algo que NO quieras cambiar?</label>
+                                <input type="text" name="no_cambiar" class="w-full bg-transparent border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none" placeholder="Ej: No quiero afeitarme, no quiero rubiarme...">
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">16. ¿Alguna persona cuya imagen admires?</label>
+                                <input type="text" name="referente" class="w-full bg-transparent border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none" placeholder="Ej: David Beckham, Ryan Gosling, Timothée Chalamet...">
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">17. ¿Algún evento importante próximo?</label>
+                                <input type="text" name="evento" class="w-full bg-transparent border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none" placeholder="Ej: Boda en septiembre, entrevista de trabajo...">
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">18. ¿Cuánto estás dispuesto a invertir en productos?</label>
+                                <select name="presupuesto" class="w-full bg-brand-nearblack border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none">
+                                    <option value="">Selecciona...</option>
+                                    <option value="Mínimo (€10-20/mes)">Mínimo (€10-20/mes)</option>
+                                    <option value="Moderado (€20-50/mes)">Moderado (€20-50/mes)</option>
+                                    <option value="Alto (€50-100/mes)">Alto (€50-100/mes)</option>
+                                    <option value="Sin límite">Sin límite</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-1.5 font-semibold">19. ¿Alguna observación adicional?</label>
+                                <textarea name="observaciones" rows="2" class="w-full bg-transparent border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none resize-none" placeholder="Cualquier otro detalle relevante..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta clave -->
+                        <div class="border-t border-white/5 pt-6">
+                            <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-2 font-semibold">20. Pregunta clave</label>
+                            <p class="text-brand-lightgray text-xs font-light mb-3">Si dentro de 6 meses alguien te dijera: «Has cambiado muchísimo, estás increíble», ¿qué crees que habría cambiado exactamente?</p>
+                            <textarea name="objetivo_emocional" rows="3" class="w-full bg-transparent border border-white/10 p-3 text-sm text-white focus:border-white/40 focus:outline-none resize-none" placeholder="Describe cómo te imaginas..."></textarea>
+                        </div>
+
+                        <!-- Botón enviar -->
+                        <div class="text-center pt-4">
+                            <button type="submit" id="asesoria-submit-btn" class="magnetic-booking-btn inline-flex items-center px-10 py-5 text-xs uppercase tracking-[0.2em]">
+                                <span id="asesoria-submit-text">Enviar y reservar cita</span>
+                                <i data-lucide="send" class="w-4 h-4 ml-2"></i>
+                            </button>
+                            <p class="mt-3 text-[0.58rem] text-brand-lightgray font-light">Tus datos se enviarán a nuestro equipo y recibirás tu dossier por Telegram.</p>
+                        </div>
+                    </form>
+
+                    <!-- Mensaje de éxito -->
+                    <div id="asesoria-success" class="hidden text-center py-16">
+                        <i data-lucide="check-circle" class="w-14 h-14 mx-auto mb-5 text-white"></i>
+                        <h3 class="font-serif text-2xl text-white mb-3">Perfecto, ya tenemos toda tu información</h3>
+                        <p class="text-brand-lightgray text-sm font-light max-w-md mx-auto mb-6">
+                            Para terminar de hacer tu asesoría, reserva tu cita y te vemos en el salón.
+                        </p>
+                        <a href="https://cut.yeasyapp.com/tbTmsH" target="_blank" rel="noopener noreferrer" class="magnetic-booking-btn inline-flex items-center px-8 py-4 text-xs uppercase tracking-[0.2em]">
+                            Reservar cita
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- SECCIÓN: ANTES / DESPUÉS integrada dentro de Asesoría -->
+            <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-8 border-t border-white/5">
+                <div class="text-center max-w-2xl mx-auto mb-16 md:mb-20">
+                    <span class="text-[0.62rem] uppercase tracking-[0.4em] text-brand-lightgray block mb-3 font-semibold">TRANSFORMACIONES</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white tracking-tight mb-6">Antes / Después</h2>
+                    <p class="text-brand-lightgray text-[0.65rem] tracking-[0.25em] uppercase">Casos de estudio con forma, contraste y detalle</p>
+                    <div class="w-12 h-[1px] bg-white/20 mx-auto mt-6"></div>
+                </div>
+
+                <div class="space-y-6" id="before-after-section-asesoria"></div>
+            </section>
+        </template>
+
+
+        <!-- VISTA: GALERIA -->
+        <template id="view-galeria">
+            <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+                    <span class="text-[0.62rem] uppercase tracking-[0.4em] text-brand-lightgray block mb-3 font-semibold">PORTFOLIO EXCLUSIVO</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white tracking-tight mb-6">Galería de Estilo</h2>
+                    <div class="w-12 h-[1px] bg-white/20 mx-auto"></div>
+                </div>
+
+                <div class="mt-8 space-y-6" id="before-after-section"></div>
+
+                <div class="mt-16">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="h-px flex-1 bg-white/10"></div>
+                        <span class="text-[0.58rem] uppercase tracking-[0.3em] text-brand-lightgray">Galería general</span>
+                        <div class="h-px flex-1 bg-white/10"></div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" id="gallery-grid">
+                        <!-- Elementos de la galería de fotos minimalistas cargados por JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lightbox Modal de Gran Fluidez para Visualizar Portafolio -->
+            <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/95 p-3 sm:p-6">
+                <div class="relative flex h-full w-full items-center justify-center">
+                    <button type="button" data-close-lightbox aria-label="Cerrar imagen" class="absolute right-2 top-2 z-[101] flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition hover:bg-white/20 sm:right-4 sm:top-4">
+                        <i data-lucide="x" class="h-5 w-5"></i>
+                    </button>
+
+                    <div class="flex w-full flex-col items-center justify-center">
+                        <img id="lightbox-img" src="" alt="" class="w-full max-w-6xl max-h-[84dvh] sm:max-h-[88dvh] object-contain border border-white/10 shadow-2xl">
+                        <div id="lightbox-caption" class="mt-4 text-center text-[0.62rem] uppercase tracking-[0.35em] text-brand-lightgray font-semibold"></div>
+                        <button type="button" data-close-lightbox class="mt-5 inline-flex items-center justify-center border border-white/20 bg-white px-5 py-2.5 text-[0.6rem] font-semibold uppercase tracking-[0.25em] text-black transition hover:bg-white/90 sm:mt-6">
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+
+        <!-- VISTA: RESEÑAS -->
+        <template id="view-resenas">
+            <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-[0.62rem] uppercase tracking-[0.4em] text-brand-lightgray block mb-3 font-semibold">OPINIONES VERIFICADAS</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white tracking-tight mb-6">Reseñas de Clientes</h2>
+                    <p class="text-brand-lightgray text-[0.65rem] tracking-wider uppercase font-semibold">Valoración de 4.9 / 5 estrellas en Google</p>
+                <div class="mt-8">
+    <a href="https://www.google.com/maps/place/FOCUTS+HAIR+STUDIO/@39.4637089,-0.365651,17z/data=!3m1!5s0xd6048c7d8dcd38b:0x1ba32d46eb6f6613!4m8!3m7!1s0xd60497ba0a6a4db:0xec2ae09949179713!8m2!3d39.4637089!4d-0.365651!9m1!1b1!16s%2Fg%2F11xkzg8dwp?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="magnetic-booking-btn inline-flex items-center px-8 py-4 text-[0.68rem] uppercase tracking-[0.25em]">
+        Ver todas las reseñas
+        <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+    </a>
+</div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="reviews-container">
+                    <!-- Inyectado dinámicamente -->
+                </div>
+            </section>
+        </template>
+
+
+        <!-- VISTA: CONTACTO -->
+        <template id="view-contacto">
+            <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+                    <span class="text-[0.62rem] uppercase tracking-[0.4em] text-brand-lightgray block mb-3 font-semibold">UBICACIÓN Y CONTACTO</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white tracking-tight mb-6">Ubicación</h2>
+                    <div class="w-12 h-[1px] bg-white/20 mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-16">
+                    <!-- Datos de contacto -->
+                    <div class="space-y-8 border border-white/5 p-6 sm:p-8 bg-brand-nearblack/20 flex flex-col justify-between">
+                        <div class="space-y-6">
+                            <div>
+                                <span class="text-[0.55rem] uppercase tracking-widest text-brand-lightgray block mb-2 font-semibold">Dirección</span>
+                                <p class="text-base sm:text-lg font-serif text-white leading-relaxed">C. Joaquín Costa, 54, Bajo 3º Izquierda</p>
+                                <p class="text-xs text-brand-lightgray mt-1">46005 Valencia, España</p>
+                            </div>
+
+                            <div>
+                                <span class="text-[0.55rem] uppercase tracking-widest text-brand-lightgray block mb-2 font-semibold">Teléfono Directo</span>
+                                <a href="tel:+34960236147" class="text-base sm:text-lg text-white hover:text-brand-lightgray transition-colors font-medium">+34 960 23 61 47</a>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 border-t border-white/5 space-y-3">
+                            <a href="https://maps.app.goo.gl/ZRxPG55hC5vc495F6" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between p-3.5 border border-white/10 hover:border-white text-[0.62rem] uppercase tracking-widest text-white transition-colors">
+                                <span>Abrir en Google Maps</span>
+                                <i data-lucide="navigation" class="w-4 h-4"></i>
+                            </a>
+                            <a href="tel:+34960236147" class="w-full flex items-center justify-between p-3.5 border border-white/10 hover:border-white text-[0.62rem] uppercase tracking-widest text-white transition-colors">
+    <span>Llamar ahora</span>
+    <i data-lucide="phone-call" class="w-4 h-4"></i>
+</a>
+<a href="https://www.instagram.com/focuts.hairstudio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between p-3.5 border border-white/10 hover:border-white text-[0.62rem] uppercase tracking-widest text-white transition-colors">
+                                <span>Ver en Instagram </span>
+                                <i class="fa-brands fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Horarios -->
+                    <div class="space-y-6 border border-white/5 p-6 sm:p-8 bg-brand-nearblack/20">
+                        <div class="flex items-center justify-between flex-wrap gap-2">
+                            <h3 class="font-serif text-lg text-white">Horarios Oficiales</h3>
+                            <span id="live-status-badge" class="px-2.5 py-1 text-[0.55rem] uppercase tracking-widest font-semibold bg-white/5 text-white rounded-none">Comprobando...</span>
+                        </div>
+                        <ul class="text-xs sm:text-sm space-y-3.5 text-brand-lightgray font-light">
+                            <li class="flex justify-between border-b border-white/5 pb-2"><span>Martes a Viernes</span> <span>10:00 - 14:00 | 16:00 - 20:00</span></li>
+                            <li class="flex justify-between border-b border-white/5 pb-2"><span>Sábado</span> <span>10:00 - 14:00</span></li>
+                            <li class="flex justify-between text-white/30"><span>Lunes y Domingo</span> <span>Cerrado</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Google Maps Adaptativo e Interactivo -->
+                <div class="w-full aspect-video sm:aspect-[21/9] border border-white/10 overflow-hidden filter grayscale opacity-50 hover:opacity-80 transition-opacity">
+                    <iframe
+    src="https://www.google.com/maps?q=C.+Joaqu%C3%ADn+Costa+54,+46005+Valencia,+Espa%C3%B1a&z=17&output=embed"
+    width="100%"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+                </div>
+            </section>
+        </template>
+
+
+        <!-- VISTA: FAQ -->
+        <template id="view-faq">
+            <section class="py-16 md:py-24 max-w-3xl mx-auto px-4 sm:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+                    <span class="text-[0.62rem] uppercase tracking-[0.4em] text-brand-lightgray block mb-3 font-semibold">RESOLVEMOS TUS DUDAS</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white tracking-tight mb-6">Preguntas</h2>
+                    <div class="w-12 h-[1px] bg-white/20 mx-auto"></div>
+                </div>
+
+                <div class="space-y-4" id="faq-accordion">
+                    <!-- Acordeones dinámicos -->
+                </div>
+            </section>
+        </template>
+
+    </div>
+
+    <!-- Pie de Página Premium Monocromático -->
+    <footer class="bg-brand-black border-t border-white/5 pt-16 pb-12 px-4 sm:px-8 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            
+            <!-- Columna 1: Logotipo -->
+            <div class="space-y-4">
+                <a href="#/inicio" class="flex flex-col items-start">
+                    <span class="font-serif text-xl tracking-[0.2em] text-white font-bold">FOCU(T)S</span>
+                    <span class="text-[0.55rem] tracking-[0.45em] text-brand-lightgray uppercase font-light -mt-1 block">HAIR STUDIO</span>
+                </a>
+                <p class="text-xs text-brand-lightgray font-light leading-relaxed max-w-xs">
+                    Un espacio de estilismo y asesoramiento masculino en el barrio de l'Eixample, Valencia.
+                </p>
+                <!-- Redes Sociales -->
+                <div class="flex items-center space-x-4 pt-2">
+                    <a href="https://www.instagram.com/focuts.hairstudio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="text-brand-lightgray hover:text-white transition-colors" aria-label="Síguenos en Instagram">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@focutshairstudio?_r=1&_t=ZN-97oAr17eOIA" target="_blank" rel="noopener noreferrer" class="text-brand-lightgray hover:text-white transition-colors" aria-label="Síguenos en TikTok">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M12.525.02c1.31.03 2.61.1 3.9.21.07 1.54.8 2.94 1.94 3.97a7.28 7.28 0 003.52 1.8v3.42c-1.2-.1-2.38-.52-3.41-1.22-.64-.43-1.2-.97-1.63-1.62v7.91a7.48 7.48 0 01-.63 2.93 7.55 7.55 0 01-5.12 4.45 7.55 7.55 0 01-8.2-2.73 7.48 7.48 0 01-.52-8.08 7.55 7.55 0 017.38-4.24v3.45a4.13 4.13 0 00-3.32 1.9 4.13 4.13 0 001.07 5.2 4.13 4.13 0 005.15-.3 4.13 4.13 0 001.44-3.56V0l.48.02z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Horarios -->
+            <div>
+                <h4 class="font-serif text-sm uppercase tracking-widest text-white mb-4">Horario</h4>
+                <ul class="text-xs text-brand-lightgray space-y-2.5 font-light">
+                    <li class="flex justify-between"><span>Martes a Viernes</span> <span class="text-white">10:00 - 14:00 | 16:00 - 20:00</span></li>
+                    <li class="flex justify-between"><span>Sábado</span> <span class="text-white">10:00 - 14:00</span></li>
+                    <li class="flex justify-between text-white/30"><span>Lunes y Domingo</span> <span>Cerrado</span></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Navegación Rápida -->
+            <div>
+                <h4 class="font-serif text-sm uppercase tracking-widest text-white mb-4">Secciones</h4>
+                <ul class="text-xs text-brand-lightgray space-y-2 font-light grid grid-cols-2 gap-x-4">
+                    <li><a href="#/inicio" class="hover:text-white transition-colors">Inicio</a></li>
+                    <li><a href="#/equipo" class="hover:text-white transition-colors">Equipo</a></li>
+                    <li><a href="#/servicios" class="hover:text-white transition-colors">Servicios</a></li>
+                    <li><a href="#/asesoria" class="hover:text-white transition-colors">Asesoría</a></li>
+                    <li><a href="#/galeria" class="hover:text-white transition-colors">Galería</a></li>
+                    <li><a href="#/resenas" class="hover:text-white transition-colors">Reseñas</a></li>
+                    <li><a href="#/contacto" class="hover:text-white transition-colors">Contacto</a></li>
+                    <li><a href="#/faq" class="hover:text-white transition-colors">Preguntas</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Reserva Express -->
+            <div>
+                <h4 class="font-serif text-sm uppercase tracking-widest text-white mb-4">Contacto Directo</h4>
+                <p class="text-xs text-brand-lightgray font-light mb-4">¿Tienes alguna duda o quieres programar una asesoría?</p>
+                <a href="tel:+34960236147" class="inline-flex items-center w-full justify-center py-3.5 border border-white/10 text-white font-medium text-xs uppercase tracking-widest hover:border-white transition-all">
+                    <i data-lucide="phone-call" class="w-4 h-4 mr-2"></i>
+                    +34 960 23 61 47
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Barra Inferior de Textos Legales -->
+        <div class="max-w-7xl mx-auto border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-[0.65rem] text-brand-lightgray font-light gap-4">
+            <p>&copy; 2026 FOCU(T)S HAIR STUDIO. Todos los derechos reservados.</p>
+            
+            <div class="flex flex-wrap gap-x-6 justify-center">
+                <button onclick="openLegalModal('aviso')" class="hover:text-white transition-colors focus:outline-none">Aviso Legal</button>
+                <button onclick="openLegalModal('privacidad')" class="hover:text-white transition-colors focus:outline-none">Política de Privacidad</button>
+                <button onclick="openLegalModal('cookies')" class="hover:text-white transition-colors focus:outline-none">Política de Cookies</button>
+            </div>
+        </div>
+
+        
+    </footer>
+
+    <!-- Modal Legal Adaptativo -->
+    <div id="legal-modal" class="fixed inset-0 bg-black/98 z-[120] hidden flex items-center justify-center p-4">
+        <div class="border border-white/10 bg-brand-black max-w-xl w-full max-h-[80vh] overflow-y-auto p-6 sm:p-8 flex flex-col justify-between">
+            <div class="space-y-6">
+                <h3 id="legal-modal-title" class="font-serif text-xl text-white"></h3>
+                <div id="legal-modal-content" class="text-xs sm:text-sm text-brand-lightgray space-y-4 font-light leading-relaxed"></div>
+            </div>
+            <div class="mt-8 pt-4 border-t border-white/5 text-right">
+                <button onclick="closeLegalModal()" class="px-6 py-2.5 bg-white text-black uppercase font-bold text-[0.65rem] tracking-widest hover:bg-brand-silver transition-all">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón Sticky de Reserva para Móvil - Siempre visible -->
+    <div class="mobile-sticky-cta" id="mobile-sticky-cta">
+        <a href="https://cut.yeasyapp.com/tbTmsH" target="_blank" rel="noopener noreferrer" class="magnetic-booking-btn inline-flex items-center justify-center px-6 py-3.5 text-[0.62rem] uppercase tracking-[0.18em]">
+            Reservar Cita
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1.5"></i>
+        </a>
+    </div>
+
+    <!-- Controladores JS, Bases de Datos e Interacción -->
+    <script>
+        // Catálogo de Servicios Oficiales de FOCU(T)S - ACTUALIZADO CON PRECIOS Y DESCRIPCIONES DE Screenshot_20260703_131847_Brave.jpg
+        const SERVICIOS_DB = [
+            // CATEGORÍA: experiencias
+            {
+                id: 'full-experience',
+                nombre: 'FOCU(T)S FULL EXPERIENCE',
+                categoria: 'experiencias',
+                precio: '50,00€',
+                duracion: '60 min',
+                descripcion: 'Una hora completa dedicada a tu imagen. Incluye asesoría personalizada, corte de pelo premium con acabado estilo fotografía, arreglo de barba al detalle, lavado, arreglo de cejas y acabado final. Calidad, dedicación y resultado de alto nivel.',
+                estrella: true
+            },
+            {
+                id: 'pro',
+                nombre: 'Focu(t)s Pro',
+                categoria: 'experiencias',
+                precio: '24,00€',
+                duracion: '40 min',
+                descripcion: 'Diagnóstico previo, diseño y asesoramiento personalizado. Mayor tiempo de detalle, ajuste de forma y explicación de mantenimiento.'
+            },
+            {
+                id: 'duo-jorge',
+                nombre: 'Focu(t)s Duo | Jorge',
+                categoria: 'experiencias',
+                precio: '27,00€',
+                duracion: '30 min',
+                descripcion: '(Pelo y barba) Corte y diseño de barba con equilibrio integral.',
+                estrella: true
+            },
+            {
+                id: 'duo-pablo',
+                nombre: 'Focu(t)s Duo | Pablo',
+                categoria: 'experiencias',
+                precio: '25,00€',
+                duracion: '45 min',
+                descripcion: '(Pelo y barba) Corte y diseño de barba con equilibrio integral. Trabajo completo de forma, contornos y acabado final.',
+                estrella: true
+            },
+            // CATEGORÍA: cortes
+            {
+                id: 'corte-cejas-jorge',
+                nombre: 'Corte Focu(t)s + Cejas Navaja | Jorge',
+                categoria: 'cortes',
+                precio: '22,00€',
+                duracion: '30 min',
+                descripcion: '' // Sin descripción en el listado original
+            },
+            {
+                id: 'corte-jorge',
+                nombre: 'Corte Focu(t)s | Jorge',
+                categoria: 'cortes',
+                precio: '19,00€',
+                duracion: '30 min',
+                descripcion: 'Corte técnico adaptado a tu estilo y rutina. Incluye asesoramiento básico y acabado profesional.'
+            },
+            {
+                id: 'corte-pablo',
+                nombre: 'Corte Focu(t)s | Pablo',
+                categoria: 'cortes',
+                precio: '17,00€',
+                duracion: '30 min',
+                descripcion: 'Corte técnico adaptado a tu estilo y rutina. Incluye asesoramiento básico y acabado profesional.'
+            },
+            {
+                id: 'jubilado',
+                nombre: 'Corte de jubilado',
+                categoria: 'cortes',
+                precio: '12,00€',
+                duracion: '30 min',
+                descripcion: '' // Sin descripción en el listado original
+            },
+            {
+                id: 'styling',
+                nombre: 'Lavado & Styling',
+                categoria: 'cortes',
+                precio: '5,00€',
+                duracion: '15 min',
+                descripcion: 'Lavado técnico y peinado con producto adecuado.'
+            },
+            // CATEGORÍA: barbas
+            {
+                id: 'barba',
+                nombre: 'Arreglo de barba / Beard trimmer',
+                categoria: 'barbas',
+                precio: '10,00€',
+                duracion: '15 min',
+                descripcion: 'Perfilado detallado y definición de contornos con acabado profesional.'
+            },
+            {
+                id: 'cejas-pinzas',
+                nombre: 'Cejas a pinzas',
+                categoria: 'barbas',
+                precio: '6,00€',
+                duracion: '15 min',
+                descripcion: 'Diseño y limpieza de cejas.'
+            },
+            // CATEGORÍA: quimicos
+            {
+                id: 'ondulacion-corte',
+                nombre: 'Tratamiento de ondulación permanente + corte',
+                categoria: 'quimicos',
+                precio: '67,00€',
+                duracion: '30 min',
+                descripcion: 'Diagnóstico previo y trabajo técnico adaptado a la salud del cabello.'
+            },
+            {
+                id: 'ondulacion',
+                nombre: 'Tratamiento de ondulación permanente',
+                categoria: 'quimicos',
+                precio: '50,00€',
+                duracion: '30 min',
+                descripcion: 'Diagnóstico previo y trabajo técnico adaptado a la salud del cabello.'
+            },
+            {
+                id: 'decoloracion-corte',
+                nombre: 'Tratamiento de decoloración + corte',
+                categoria: 'quimicos',
+                precio: '85,00€',
+                duracion: '30 min',
+                descripcion: 'Diagnóstico previo y trabajo técnico adaptado a la salud del cabello.'
+            },
+            {
+                id: 'mechas-corte',
+                nombre: 'Mechas + corte',
+                categoria: 'quimicos',
+                precio: '75,00€',
+                duracion: '30 min',
+                descripcion: 'Diagnóstico previo y trabajo técnico adaptado a la salud del cabello.'
+            },
+            {
+                id: 'mechas',
+                nombre: 'Mechas',
+                categoria: 'quimicos',
+                precio: '60,00€',
+                duracion: '30 min',
+                descripcion: 'Diagnóstico previo y trabajo técnico adaptado a la salud del cabello.'
+            }
+        ];
+
+        const RESENAS_DB = [
+            {
+                cliente: 'Carlos M.',
+                fecha: 'Hace 1 semana',
+                valoracion: 5,
+                texto: 'Espectacular trato. Fui por la recomendación del visagismo y fue todo un acierto de Pablo. Te explica qué tipo de corte te queda mejor y por qué. Un sitio minimalista muy profesional.'
+            },
+            {
+                cliente: 'Javier Domenech',
+                fecha: 'Hace 2 semanas',
+                valoracion: 5,
+                texto: 'Llevo cortándome el pelo con Jorge más de un año y no cambio. Un auténtico profesional de alta gama. El local está impecable, huele increíble y la atención de ambos es excepcional.'
+            },
+            {
+                cliente: 'Mateo Ruiz',
+                fecha: 'Hace 1 mes',
+                valoracion: 5,
+                texto: 'FOCU(T)S es sin duda la mejor barbería de Valencia. No es un corte rápido, se toman su tiempo, analizan tus facciones y usan los mejores productos.'
+            }
+        ];
+
+        // Base de Datos de Preguntas Frecuentes (FAQ)
+        const FAQ_DB = [
+            {
+                pregunta: '¿Es necesario reservar cita previa?',
+                respuesta: 'Para garantizar la excelencia, intimidad y el tiempo de diagnóstico de visagismo de cada cliente, trabajamos exclusivamente mediante cita previa. Puedes agendar cómodamente de forma online las 24 horas.'
+            },
+            {
+                pregunta: '¿Qué es exactamente la asesoría de visagismo?',
+                respuesta: 'El visagismo es el estudio formal de tus facciones y fisonomía ósea facial. No se cobra como extra; viene totalmente integrado en nuestros servicios para darte el corte idóneo.'
+            },
+            {
+                pregunta: '¿Cuáles son los métodos de pago aceptados?',
+                respuesta: 'Aceptamos efectivo, tarjetas de crédito principales y pago por dispositivo móvil. El pago se realiza íntegramente en el local físico tras finalizar tu servicio.'
+            },
+            {
+                pregunta: '¿Con cuánta antelación debo cancelar si no puedo asistir?',
+                respuesta: 'Te solicitamos encarecidamente que nos notifiques con un mínimo de 4 horas de antelación para poder asignar tu turno a otro cliente.'
+            },
+            {
+                pregunta: 'Nunca me he dejado asesorar.',
+                respuesta: 'No pasa nada. La asesoría es precisamente el punto de partida para entender mejor tu perfil, tu cabello y tus objetivos, y así proponer un resultado que te favorezca de verdad.'
+            },
+            {
+                pregunta: '¿En qué consiste exactamente?',
+                respuesta: 'Consiste en un análisis de tus facciones, textura del cabello, crecimiento, estilo de vida y personalidad para diseñar un corte y un acabado coherentes contigo. Es una sesión de diagnóstico, no un extra.'
+            },
+            {
+                pregunta: '¿Qué pasa en la primera asesoría?',
+                respuesta: 'En la primera visita conversamos contigo, evaluamos tu cabello y tus rasgos, y te proponemos una dirección clara para el resultado. Si lo deseas, también podemos ajustar detalles en tiempo real para que salgas con total seguridad.'
+            },
+            {
+                pregunta: '¿Qué corte me recomendaríais?',
+                respuesta: 'Te recomendaríamos el corte que mejor complemente tu estructura facial, el movimiento de tu cabello y la imagen que quieres proyectar. No se trata de seguir una moda, sino de encontrar lo que mejor te sienta.'
+            },
+            {
+                pregunta: '¿Cuánto dura el resultado?',
+                respuesta: 'El resultado se mantiene en función del crecimiento del cabello y del mantenimiento que sigas. Con un buen cuidado y revisiones periódicas, un corte bien planteado puede mantenerse impecable durante semanas.'
+            }
+        ];
+
+        // Base de Datos de la Galería
+        const GALERIA_DB = [
+            { img: 'images/30377.jpg', cat: 'Cortes', cap: 'Detalle principal' },
+            { img: 'images/30380.jpg', cat: 'Barbas', cap: 'Perfilado de barba' },
+            { img: 'images/30385.jpg', cat: 'Estilo', cap: 'Composición de imagen' },
+            { img: 'images/30386.jpg', cat: 'Cortes', cap: 'Estructura de estilo' },
+            { img: 'images/30387.jpg', cat: 'Barbas', cap: 'Arreglo de barba' },
+            { img: 'images/30390.jpeg', cat: 'Cortes', cap: 'Modern Mullet' },
+            { img: 'images/ropa.jpeg', cat: 'Ropa', cap: 'Ropa Focu(T)s' },
+            { img: 'images/localsilla.jpeg', cat: 'Local', cap: 'Sillon magico' },
+            { img: 'images/localpuerta.jpeg', cat: 'Local', cap: 'Vista Total del Local' },
+        ];
+
+        /* ==========================================
+           SISTEMA DE RUTAS (CLIENT-SIDE ROUTER)
+           ========================================== */
+        const ROUTES = {
+            '#/inicio': 'view-inicio',
+            '#/equipo': 'view-equipo',
+            '#/servicios': 'view-servicios',
+            '#/asesoria': 'view-asesoria',
+            '#/galeria': 'view-galeria',
+            '#/resenas': 'view-resenas',
+            '#/contacto': 'view-contacto',
+            '#/faq': 'view-faq'
+        };
+
+        function handleRouter() {
+            const currentHash = window.location.hash || '#/inicio';
+            const templateId = ROUTES[currentHash] || 'view-inicio';
+            const container = document.getElementById('view-container');
+
+            container.classList.add('fade-out');
+
+            setTimeout(() => {
+                const template = document.getElementById(templateId);
+                if (template) {
+                    container.innerHTML = '';
+                    const clone = template.content.cloneNode(true);
+                    container.appendChild(clone);
+                    
+                    initSpecificViews(currentHash);
+                    updateActiveNavLinks(currentHash);
+                    initLightbox();
+                    lucide.createIcons();
+                }
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                container.classList.remove('fade-out');
+            }, 300);
+        }
+
+        window.addEventListener('hashchange', handleRouter);
+        window.addEventListener('DOMContentLoaded', () => {
+            handleRouter();
+            updateLiveStatus();
+        });
+
+        /* ==========================================
+           LÓGICAS ESPECÍFICAS DE CADA PÁGINA
+           ========================================== */
+        function initSpecificViews(hash) {
+            if (hash === '#/servicios') {
+                renderServicesCategory('experiencias', 'servicios-experiencias');
+                renderServicesCategory('cortes', 'servicios-cortes');
+                renderServicesCategory('barbas', 'servicios-barbas');
+                renderServicesCategory('quimicos', 'servicios-quimicos');
+            }
+            if (hash === '#/asesoria') {
+                renderBeforeAfterSection();
+            }
+            if (hash === '#/galeria') {
+                renderGallery();
+            }
+            if (hash === '#/resenas') {
+                renderReviews();
+            }
+            if (hash === '#/faq') {
+                renderFAQ();
+            }
+            if (hash === '#/contacto') {
+                updateLiveStatus();
+            }
+        }
+
+        /* ==========================================
+           RENDERIZADORES DE VISTAS (IMAGEN.PNG ESTILO)
+           ========================================== */
+
+        function renderServicesCategory(cat, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const filtered = SERVICIOS_DB.filter(s => s.categoria === cat);
+
+            // Estructura limpia inspirada en imagen.png con color de descripción #d9d7d7 y plegable
+            container.innerHTML = filtered.map(s => {
+                const hasDesc = s.descripcion && s.descripcion.trim() !== '';
+                return `
+                    <div class="menu-divider pb-5 flex flex-row justify-between items-start gap-4 w-full">
+                        <div class="flex-1 space-y-1 pr-4">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <h4 class="font-serif text-sm sm:text-base text-white font-semibold tracking-wide">${s.nombre} · ${s.duracion}</h4>
+                                ${s.estrella ? `
+                                    <span class="text-[0.55rem] tracking-[0.2em] uppercase bg-white text-black font-semibold px-2 py-0.5 rounded-none">
+                                        ESTRELLA
+                                    </span>
+                                ` : ''}
+                            </div>
+                            
+                            ${hasDesc ? `
+                                <button id="desc-btn-${s.id}" onclick="toggleServiceDesc('${s.id}')" class="text-[0.65rem] uppercase tracking-wider text-brand-lightgray hover:text-white underline decoration-white/20 underline-offset-4 focus:outline-none block mt-1">
+                                    Ver descripción
+                                </button>
+                                <p id="desc-content-${s.id}" class="hidden service-desc-text text-[0.68rem] sm:text-xs font-light leading-relaxed max-w-2xl mt-2">
+                                    ${s.descripcion}
+                                </p>
+                            ` : ''}
+                        </div>
+                        <div class="text-right whitespace-nowrap pt-1">
+                            <span class="font-serif text-sm sm:text-base text-white font-semibold block mb-2">${s.precio}</span>
+                            <a href="https://cut.yeasyapp.com/tbTmsH" target="_blank" rel="noopener noreferrer" class="magnetic-booking-btn inline-block px-3 py-1.5 rounded-none text-[0.55rem] uppercase tracking-[0.1em]">
+                                Reservar
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Función interactiva para plegar y desplegar descripciones en los servicios
+        function toggleServiceDesc(id) {
+            const content = document.getElementById(`desc-content-${id}`);
+            const btn = document.getElementById(`desc-btn-${id}`);
+            if (content && btn) {
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    btn.textContent = 'Ocultar descripción';
+                } else {
+                    content.classList.add('hidden');
+                    btn.textContent = 'Ver descripción';
+                }
+            }
+        }
+
+        function toggleProductDesc(id) {
+            const content = document.getElementById(`prod-content-${id}`);
+            const btn = document.getElementById(`prod-btn-${id}`);
+            if (content && btn) {
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    btn.textContent = 'Ocultar descripción';
+                } else {
+                    content.classList.add('hidden');
+                    btn.textContent = 'Ver descripción';
+                }
+            }
+        }
+
+        const BEFORE_AFTER_DB = [
+            {
+                nombre: 'Cliente 01',
+                before: 'images/antes-y-después/01.jpeg',
+                after: 'images/antes-y-después/02.jpeg',
+                descripcion: 'Diseño de raya geométrica para aportar carácter y definición angular al corte, rompiendo la monotonía del crecimiento natural.'
+            },
+            {
+                nombre: 'Cliente 02',
+                before: 'images/antes-y-después/03.jpeg',
+                after: 'images/antes-y-después/04.jpeg',
+                descripcion: 'Mismo corte, pero el acabado marca la diferencia: texturizado y degradado bajo para dar volumen controlado arriba y limpieza en la nuca.'
+            },
+            {
+                nombre: 'Cliente 03',
+                before: 'images/antes-y-después/05.jpeg',
+                after: 'images/antes-y-después/06.jpeg',
+                descripcion: 'Reducción de longitud y peso para trabajar el rizo natural a su favor, ganando forma y definición en lugar de volumen descontrolado.'
+            },
+            {
+                nombre: 'Cliente 04',
+                before: 'images/antes-y-después/07.jpeg',
+                after: 'images/antes-y-después/08.jpeg',
+                descripcion: 'Usamos el corte con capas para aligerar el peso del rubio y darle movimiento natural en vez de caer plano.'
+            }
+        ];
+
+        let activeGalleryList = [];
+        let currentImgIndex = 0;
+
+        function renderBeforeAfterSection() {
+            const container = document.getElementById('before-after-section-asesoria');
+            if (!container) return;
+
+            const grouped = [];
+            for (let i = 0; i < BEFORE_AFTER_DB.length; i += 2) {
+                grouped.push(BEFORE_AFTER_DB.slice(i, i + 2));
+            }
+
+            container.innerHTML = grouped.map(group => `
+                <div class="grid gap-6 xl:grid-cols-2">
+                    ${group.map(item => `
+                        <div class="before-after-card overflow-hidden">
+                            <div class="grid md:grid-cols-2 items-stretch gap-2">
+                                <div class="before-after-media">
+                                    <img src="${item.before}" alt="Antes de ${item.nombre}" loading="lazy">
+                                    <span class="before-after-label">Antes</span>
+                                </div>
+                                <div class="before-after-media">
+                                    <img src="${item.after}" alt="Después de ${item.nombre}" loading="lazy">
+                                    <span class="before-after-label">Después</span>
+                                </div>
+                            </div>
+                            <div class="before-after-description">
+                                <p class="service-desc-text text-xs sm:text-sm leading-relaxed font-light">${item.descripcion}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `).join('');
+        }
+
+        function renderGallery() {
+            const grid = document.getElementById('gallery-grid');
+            if (!grid) return;
+
+            activeGalleryList = GALERIA_DB;
+
+            grid.innerHTML = activeGalleryList.map((g, index) => `
+                <div onclick="openLightbox(${index})" class="relative group aspect-square bg-brand-darkgray overflow-hidden cursor-pointer border border-white/5">
+                    <img src="${g.img}" alt="${g.cap}" class="w-full h-full object-cover filter grayscale transition-transform duration-700 group-hover:scale-105 group-hover:filter-none opacity-60 hover:opacity-100" loading="lazy">
+                    <div class="absolute bottom-4 left-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-[0.55rem] text-brand-lightgray uppercase tracking-widest block font-semibold">${g.cat}</span>
+                        <span class="text-xs text-white uppercase font-bold tracking-wider">${g.cap}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function initLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            if (!lightbox || lightbox.dataset.bound === 'true') return;
+
+            const closeLightbox = () => {
+                lightbox.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            };
+
+            lightbox.querySelectorAll('[data-close-lightbox]').forEach(button => {
+                button.addEventListener('click', closeLightbox);
+            });
+
+            lightbox.addEventListener('click', (event) => {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (!lightbox.classList.contains('hidden') && event.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+
+            lightbox.dataset.bound = 'true';
+        }
+
+        function openLightbox(index) {
+            currentImgIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lImg = document.getElementById('lightbox-img');
+            const lCap = document.getElementById('lightbox-caption');
+
+            if (!lightbox || !lImg || !lCap) return;
+
+            lImg.src = activeGalleryList[currentImgIndex].img;
+            lImg.alt = activeGalleryList[currentImgIndex].cap;
+            lCap.textContent = activeGalleryList[currentImgIndex].cap;
+            lightbox.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            lucide.createIcons();
+        }
+
+        function renderReviews() {
+            const container = document.getElementById('reviews-container');
+            if (!container) return;
+
+            container.innerHTML = RESENAS_DB.map(r => `
+                <div class="border border-white/5 bg-brand-nearblack/20 p-6 sm:p-8 flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex items-center space-x-1 mb-4 text-white">
+                            ${Array(r.valoracion).fill('<i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>').join('')}
+                        </div>
+                        <p class="service-desc-text text-xs sm:text-sm italic font-light leading-relaxed mb-6">"${r.texto}"</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <div>
+                            <span class="block text-xs text-white font-bold uppercase tracking-wider">${r.cliente}</span>
+                            <span class="text-[0.6rem] text-brand-lightgray">${r.fecha}</span>
+                        </div>
+                        <span class="text-[0.55rem] font-bold tracking-widest uppercase text-white/40">Verificada</span>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function renderFAQ() {
+            const accordion = document.getElementById('faq-accordion');
+            if (!accordion) return;
+
+            accordion.innerHTML = FAQ_DB.map((f, index) => `
+                <div class="border border-white/5 bg-brand-nearblack/10 overflow-hidden">
+                    <button onclick="toggleAccordion(${index})" class="w-full text-left p-5 sm:p-6 flex justify-between items-center hover:bg-brand-nearblack/40 transition-colors focus:outline-none">
+                        <span class="font-serif text-xs sm:text-sm text-white tracking-wide pr-4">${f.pregunta}</span>
+                        <span id="accordion-icon-${index}" class="text-white transition-transform duration-300">
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </span>
+                    </button>
+                    <div id="accordion-content-${index}" class="hidden p-5 sm:p-6 pt-0 border-t border-white/5 service-desc-text text-xs sm:text-sm font-light leading-relaxed">
+                        ${f.respuesta}
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function toggleAccordion(index) {
+            const content = document.getElementById(`accordion-content-${index}`);
+            const icon = document.getElementById(`accordion-icon-${index}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        /* ==========================================
+           INTERACCIONES DEL MENÚ MÓVIL Y ESTADOS
+           ========================================== */
+
+        // Control interactivo fail-safe para el menú móvil de fondo blanco
+        function toggleMobileMenu(show) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                if (show) {
+                    mobileMenu.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        }
+
+        function updateActiveNavLinks(hash) {
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => {
+                if (link.getAttribute('href') === hash) {
+                    link.classList.add('active-link');
+                } else {
+                    link.classList.remove('active-link');
+                }
+            });
+        }
+
+        function updateLiveStatus() {
+            const badge = document.getElementById('live-status-badge');
+            if (!badge) return;
+
+            const now = new Date();
+            const day = now.getDay();
+            const hour = now.getHours();
+            const minutes = now.getMinutes();
+            const currentTime = hour + minutes / 60;
+
+            let open = false;
+
+            if (day >= 2 && day <= 5) { // Martes a Viernes
+                if ((currentTime >= 10 && currentTime < 14) || (currentTime >= 16 && currentTime < 20)) {
+                    open = true;
+                }
+            } else if (day === 6) { // Sábado
+                if (currentTime >= 10 && currentTime < 14) {
+                    open = true;
+                }
+            }
+
+            if (open) {
+                badge.textContent = "Abierto ahora";
+                badge.className = "px-2.5 py-1 text-[0.55rem] uppercase tracking-widest font-semibold bg-white/10 text-white border border-white/20";
+            } else {
+                badge.textContent = "Cerrado ahora";
+                badge.className = "px-2.5 py-1 text-[0.55rem] uppercase tracking-widest font-semibold bg-red-500/10 text-red-400 border border-red-500/10";
+            }
+        }
+
+        /* ==========================================
+           MODALES LEGALES
+           ========================================== */
+        const LEGAL_TEXTS = {
+            aviso: {
+                titulo: "Aviso Legal",
+                contenido: `
+                    <p>En cumplimiento de lo previsto en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico, se pone a disposición del usuario los siguientes datos legales de FOCU(T)S HAIR STUDIO.</p>
+                    <p><strong>Titular del Sitio:</strong> FOCU(T)S HAIR STUDIO.</p>
+                    <p><strong>Domicilio Social:</strong> C. Joaquín Costa, 54, Bajo 3º Izquierda, 46005 Valencia, España.</p>
+                    <p><strong>Contacto Directo:</strong> +34 960 23 61 47</p>
+                `
+            },
+            privacidad: {
+                titulo: "Política de Privacidad",
+                contenido: `
+                    <p>En FOCU(T)S HAIR STUDIO protegemos tu privacidad y garantizamos el tratamiento de tus datos personales conforme al Reglamento General de Protección de Datos (RGPD) y la LOPDGDD de España.</p>
+                    <p><strong>Responsable del Tratamiento:</strong> FOCU(T)S HAIR STUDIO.</p>
+                    <p><strong>Finalidad del Tratamiento:</strong> Gestionar las reservas de estilismo y responder a consultas por WhatsApp.</p>
+                `
+            },
+            cookies: {
+                titulo: "Política de Cookies",
+                contenido: `
+                    <p>Este sitio web únicamente utiliza cookies técnicas propias necesarias para permitir el correcto funcionamiento de la navegación y cookies de análisis del mapa de Google Maps para brindarle una mejor experiencia de localización.</p>
+                `
+            }
+        };
+
+        function openLegalModal(type) {
+            const modal = document.getElementById('legal-modal');
+            const title = document.getElementById('legal-modal-title');
+            const content = document.getElementById('legal-modal-content');
+
+            if (LEGAL_TEXTS[type]) {
+                title.textContent = LEGAL_TEXTS[type].titulo;
+                content.innerHTML = LEGAL_TEXTS[type].contenido;
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closeLegalModal() {
+            const modal = document.getElementById('legal-modal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function toggleDeveloperGuide() {
+            const panel = document.getElementById('developer-guide-panel');
+            panel.classList.toggle('hidden');
+        }
+
+        /* ==========================================
+           ASESORÍA PREMIUM - FORMULARIO Y TELEGRAM
+           ========================================== */
+
+        let asesoriaPhotos = [];
+
+        function toggleAsesoriaForm(show) {
+            const wrapper = document.getElementById('asesoria-form-wrapper');
+            if (!wrapper) return;
+            if (show) {
+                wrapper.classList.remove('hidden');
+                wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                lucide.createIcons();
+            } else {
+                wrapper.classList.add('hidden');
+            }
+        }
+
+        function handleAsesoriaPhotos(input) {
+            const grid = document.getElementById('asesoria-photo-preview');
+            grid.innerHTML = '';
+            asesoriaPhotos = [];
+
+            Array.from(input.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    asesoriaPhotos.push({ name: file.name, data: e.target.result });
+                    const div = document.createElement('div');
+                    div.className = 'relative aspect-square bg-brand-darkgray overflow-hidden border border-white/10';
+                    div.innerHTML = '<img src="' + e.target.result + '" class="w-full h-full object-cover filter grayscale opacity-70 hover:opacity-100 hover:filter-none transition-all">';
+                    grid.appendChild(div);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        async function submitAsesoriaForm(e) {
+            e.preventDefault();
+            const btn = document.getElementById('asesoria-submit-btn');
+            const txt = document.getElementById('asesoria-submit-text');
+            txt.textContent = 'Enviando...';
+            btn.disabled = true;
+
+            const data = new FormData(e.target);
+            const d = {};
+            data.forEach((v, k) => d[k] = v);
+
+            const prompt = compileAsesoriaPrompt(d);
+
+            // Enviar vía serverless function (Netlify/Vercel)
+            let sent = false;
+            try {
+                const res = await fetch('/api/send-asesoria', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt, photos: asesoriaPhotos.map(p => p.data) })
+                });
+                const result = await res.json();
+                if (result.ok) sent = true;
+                // Si el backend devolvió fallback (sin Telegram configurado), usar el prompt
+                if (result.fallback && result.prompt) {
+                    await navigator.clipboard.writeText(result.prompt);
+                    txt.textContent = 'Prompt copiado al portapapeles ✓';
+                    sent = true;
+                }
+            } catch (_) {}
+
+            // Fallback: copiar al portapapeles
+            if (!sent) {
+                try {
+                    await navigator.clipboard.writeText(prompt);
+                    txt.textContent = 'Prompt copiado al portapapeles ✓';
+                } catch (_) {
+                    showPromptInModal(prompt);
+                    txt.textContent = 'Prompt listo para copiar';
+                }
+            }
+
+            // Mostrar éxito
+            document.getElementById('asesoria-form').classList.add('hidden');
+            document.getElementById('asesoria-success').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function compileAsesoriaPrompt(d) {
+            const fotosInfo = asesoriaPhotos.length > 0
+                ? asesoriaPhotos.map((p, i) => 'Foto ' + (i+1) + ': [adjunta]').join('\n')
+                : '[Sin fotos adjuntas - el cliente debe enviarlas por separado]';
+
+            return `ASESORÍA DE IMAGEN MASCULINA PREMIUM
+
+Actúa como un equipo multidisciplinar formado por:
+* Asesor de imagen de lujo.
+* Visagista profesional.
+* Colorista especializado en colorimetría estacional.
+* Barbero experto en morfología masculina.
+* Estilista masculino.
+* Asesor de moda.
+* Especialista en imagen personal.
+* Maquillador profesional especializado en maquillaje masculino natural.
+* Director creativo editorial.
+* Director de arte especializado en revistas premium.
+
+Tu misión consiste en elaborar un dossier de asesoría de imagen de nivel profesional, comparable al trabajo realizado por una consultora de imagen de alto nivel.
+
+El resultado debe transmitir la sensación de estar leyendo una revista de lujo, combinando análisis técnico, estética editorial y recomendaciones completamente personalizadas.
+
+---
+
+DATOS DEL CLIENTE:
+
+Nombre: ${d.nombre || 'No especificado'}
+Edad: ${d.edad || 'No especificado'}
+Profesión: ${d.profesion || 'No especificado'}
+Estudiando: ${d.estudiando || 'No especificado'}
+Estilo preferido: ${d.estilo_preferido || 'No especificado'}
+Identidad de estilo: ${d.identidad_estilo || 'No especificado'}
+Tipo de cabello: ${d.tipo_cabello || 'No especificado'}
+Entradas: ${d.entradas || 'No especificado'}
+Barba: ${d.barba || 'No especificado'}
+Gafas: ${d.gafas || 'No especificado'}
+Aspectos que más le gustan: ${d.me_gusta || 'No especificado'}
+Aspectos que menos le gustan: ${d.no_me_gusta || 'No especificado'}
+Imagen que quiere proyectar: ${d.imagen_objetivo || 'No especificado'}
+Qué NO quiere cambiar: ${d.no_cambiar || 'No especificado'}
+Referente de imagen: ${d.referente || 'No especificado'}
+Evento próximo: ${d.evento || 'No especificado'}
+Presupuesto: ${d.presupuesto || 'No especificado'}
+Observaciones: ${d.observaciones || 'No especificado'}
+
+OBJETIVO EMOCIONAL:
+"${d.objetivo_emocional || 'No especificado'}"
+
+FOTOS DEL CLIENTE:
+${fotosInfo}
+
+---
+
+INSTRUCCIONES:
+1. Analiza las fotografías para determinar: forma de rostro, subtono, temperatura, contraste, profundidad, estación cromática.
+2. Utiliza el cuestionario para construir recomendaciones completamente personalizadas.
+3. Si existe contradicción entre deseos del cliente y la recomendación técnicamente más favorecedora, explica ambas opciones y justifica.
+4. Dossier principalmente visual (70% visual / 30% texto).
+5. Formato vertical 9:16, diseño editorial premium inspirado en GQ, Esquire, Tom Ford, Apple.
+6. Identidad visual: fondo blanco, espacio en blanco, diseño limpio, elegante, minimalista.
+
+ESTRUCTURA DEL DOSSIER:
+1. PORTADA - Nombre, fecha, diseño editorial premium.
+2. RESUMEN EJECUTIVO - Iconografía: forma del rostro, contraste, subtono, temperatura, profundidad, estación cromática, potencial de mejora. Máximo 150 palabras.
+3. ANÁLISIS FACIAL - Frente, mandíbula, mentón, nariz, labios, ojos, cejas, pómulos, proporciones, simetría. Retrato con líneas y etiquetas.
+4. COLORIMETRÍA - Rueda cromática, subtono, temperatura, contraste, profundidad, intensidad. Paleta personalizada con colores que favorecen ✅ y colores que apagan ❌. Cuadrículas para camisetas, polos, camisas, sudaderas, trajes, abrigos.
+5. PEINADOS - Simular: Buzz Cut, French Crop, Crop, Low Fade, Mid Fade, High Fade, Taper Fade, Side Part, Quiff, Pompadour, Slick Back, Curtains, pelo medio, pelo largo. Clasificar con ⭐✅❌ y puntuar del 1 al 10.
+6. BARBA - Comparar: afeitado, 3 días, corta, media, larga, corporate, balbo, perilla.
+7. CEJAS - Forma actual vs recomendada. Inicio, arco, final. Mantenimiento.
+8. GAFAS - Simular: Wayfarer, Clubmaster, Aviador, Rectangulares, Redondas, Cuadradas, Transparentes, Carey, Negras.
+9. MAQUILLAJE MASCULINO NATURAL - Mapa facial con corrector, base, bronzer, contorno, blush, iluminador, polvos. Productos gama económica, media y premium.
+10. ESTILO DE ROPA - Comparativa: Old Money, Quiet Luxury, Smart Casual, Business, Minimalista, Casual, Streetwear, Formal.
+11. ACCESORIOS - Relojes, anillos, pulseras, collares, pendientes, gorras, sombreros.
+12. PERFUMES - 3 económicos, 3 gama media, 3 premium con personalidad, ocasión, estación y duración.
+13. PLAN GLOW UP - 90 días, dividido por semanas, acciones sencillas y priorizadas por impacto.
+14. RESUMEN FINAL - 10 cambios con mayor impacto, puntuación global, fortalezas, margen de mejora, potencial final.
+15. CONTROL DE CALIDAD - Verificar coherencia entre todos los apartados.
+
+Todas las simulaciones deben usar siempre el mismo rostro. Nunca caricaturas. Fotografías reales.
+
+El resultado final debe parecer una publicación editorial de lujo creada por una consultora de imagen masculina de máximo nivel.`;
+        }
+
+
+        function showPromptInModal(prompt) {
+            const old = document.getElementById('prompt-modal');
+            if (old) old.remove();
+            const m = document.createElement('div');
+            m.id = 'prompt-modal';
+            m.className = 'fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4';
+            m.innerHTML = '<div class="max-w-3xl w-full max-h-[85vh] flex flex-col border border-white/10 bg-brand-nearblack">' +
+                '<div class="p-4 border-b border-white/5 flex justify-between items-center">' +
+                '<span class="text-xs uppercase tracking-widest text-white font-semibold">Prompt — cópialo y pégalo en ChatGPT/Claude</span>' +
+                '<button onclick="document.getElementById(\'prompt-modal\').remove()" class="text-white hover:text-white/60"><i data-lucide="x" class="w-5 h-5"></i></button></div>' +
+                '<div class="flex-1 overflow-y-auto p-4"><pre class="text-xs text-brand-lightgray font-mono whitespace-pre-wrap leading-relaxed" id="prompt-modal-text"></pre></div>' +
+                '<div class="p-4 border-t border-white/5"><button onclick="navigator.clipboard.writeText(document.getElementById(\'prompt-modal-text\').textContent).then(() => this.textContent = \'Copiado ✓\')" class="magnetic-booking-btn px-6 py-3 text-[0.62rem] uppercase tracking-widest">Copiar al portapapeles</button></div></div>';
+            document.body.appendChild(m);
+            document.getElementById('prompt-modal-text').textContent = prompt;
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
