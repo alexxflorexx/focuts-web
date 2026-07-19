@@ -2184,22 +2184,35 @@
             data.forEach((v, k) => d[k] = v);
 
             const prompt = compileAsesoriaPrompt(d);
+            const payload = { prompt, photos: asesoriaPhotos.map(p => p.data) };
 
-            // Enviar vía serverless function (Netlify/Vercel)
+            // Enviar a Telegram + Email en paralelo
             let sent = false;
             try {
-                const res = await fetch('/api/send-asesoria', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt, photos: asesoriaPhotos.map(p => p.data) })
-                });
-                const result = await res.json();
-                if (result.ok) sent = true;
-                // Si el backend devolvió fallback (sin email configurado), usar el prompt
-                if (result.fallback && result.prompt) {
-                    await navigator.clipboard.writeText(result.prompt);
-                    txt.textContent = 'Prompt copiado al portapapeles ✓';
-                    sent = true;
+                const [resTelegram, resEmail] = await Promise.allSettled([
+                    fetch('/api/send-asesoria', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    }),
+                    fetch('/api/send-email', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    })
+                ]);
+
+                // Verificar si alguno devolvió fallback
+                for (const r of [resTelegram, resEmail]) {
+                    if (r.status === 'fulfilled') {
+                        const json = await r.value.json();
+                        if (json.fallback && json.prompt) {
+                            await navigator.clipboard.writeText(json.prompt);
+                            txt.textContent = 'Prompt copiado al portapapeles ✓';
+                            sent = true;
+                        }
+                        if (json.ok) sent = true;
+                    }
                 }
             } catch (_) {}
 
