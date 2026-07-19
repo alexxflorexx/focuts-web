@@ -44,6 +44,9 @@ exports.handler = async (event) => {
       };
     }
 
+    console.log("TELEGRAM_CHAT_ID:", CHAT_ID);
+    console.log("hasTelegram:", hasTelegram);
+
     const errors = [];
 
     // ─── EMAIL (Resend) ───
