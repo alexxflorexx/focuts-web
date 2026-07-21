@@ -1031,12 +1031,19 @@
                         <!-- Fotos -->
                         <div>
                             <label class="text-[0.6rem] uppercase tracking-widest text-brand-lightgray block mb-2 font-semibold">1. Tus fotos</label>
-                            <p class="text-brand-lightgray text-[0.65rem] font-light mb-3">Sube al menos 2 fotos: frontal y de perfil. Selecciona todas las que quieras.</p>
-                            <label for="asesoria-fotos" class="cursor-pointer border border-dashed border-white/20 hover:border-white/40 p-6 text-center transition-colors block">
-                                <i data-lucide="upload" class="w-6 h-6 mx-auto mb-2 text-brand-lightgray"></i>
-                                <span class="text-[0.62rem] uppercase tracking-widest text-brand-lightgray">Pulsa para subir fotos</span>
-                                <input type="file" id="asesoria-fotos" multiple accept="image/*" class="hidden" onchange="handleAsesoriaPhotos(this)">
-                            </label>
+                            <p class="text-brand-lightgray text-[0.65rem] font-light mb-3">Sube al menos 2 fotos: frontal y de perfil.</p>
+                            <div class="grid grid-cols-2 gap-3 mb-3">
+                                <label for="asesoria-fotos-gallery" class="cursor-pointer border border-dashed border-white/20 hover:border-white/40 p-5 text-center transition-colors block">
+                                    <i data-lucide="image" class="w-5 h-5 mx-auto mb-2 text-brand-lightgray"></i>
+                                    <span class="text-[0.58rem] uppercase tracking-widest text-brand-lightgray">Galería (varias)</span>
+                                </label>
+                                <label for="asesoria-fotos-camera" class="cursor-pointer border border-dashed border-white/20 hover:border-white/40 p-5 text-center transition-colors block">
+                                    <i data-lucide="camera" class="w-5 h-5 mx-auto mb-2 text-brand-lightgray"></i>
+                                    <span class="text-[0.58rem] uppercase tracking-widest text-brand-lightgray">Cámara</span>
+                                </label>
+                            </div>
+                            <input type="file" id="asesoria-fotos-gallery" multiple accept="image/*" class="hidden" onchange="handleAsesoriaPhotos(this)">
+                            <input type="file" id="asesoria-fotos-camera" accept="image/*" capture="environment" class="hidden" onchange="handleAsesoriaPhotosCamera(this)">
                             <div id="asesoria-photo-preview" class="grid grid-cols-3 sm:grid-cols-4 gap-2 mt-3"></div>
                         </div>
 
@@ -2150,22 +2157,73 @@
             }
         }
 
-        function handleAsesoriaPhotos(input) {
-            const grid = document.getElementById('asesoria-photo-preview');
-            grid.innerHTML = '';
-            asesoriaPhotos = [];
-
-            Array.from(input.files).forEach(file => {
+        function compressImage(file) {
+            return new Promise((resolve) => {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    asesoriaPhotos.push({ name: file.name, data: e.target.result });
-                    const div = document.createElement('div');
-                    div.className = 'relative aspect-square bg-brand-darkgray overflow-hidden border border-white/10';
-                    div.innerHTML = '<img src="' + e.target.result + '" class="w-full h-full object-cover filter grayscale opacity-70 hover:opacity-100 hover:filter-none transition-all">';
-                    grid.appendChild(div);
+                    const img = new Image();
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        const MAX_WIDTH = 1200;
+                        const MAX_HEIGHT = 1200;
+                        let width = img.width;
+                        let height = img.height;
+
+                        if (width > MAX_WIDTH || height > MAX_HEIGHT) {
+                            if (width > height) {
+                                height = Math.round((height * MAX_WIDTH) / width);
+                                width = MAX_WIDTH;
+                            } else {
+                                width = Math.round((width * MAX_HEIGHT) / height);
+                                height = MAX_HEIGHT;
+                            }
+                        }
+
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+                        resolve(canvas.toDataURL('image/jpeg', 0.7));
+                    };
+                    img.src = e.target.result;
                 };
                 reader.readAsDataURL(file);
             });
+        }
+
+        function updatePhotoPreview() {
+            const grid = document.getElementById('asesoria-photo-preview');
+            grid.innerHTML = '';
+            asesoriaPhotos.forEach((photo, i) => {
+                const div = document.createElement('div');
+                div.className = 'relative aspect-square bg-brand-darkgray overflow-hidden border border-white/10';
+                div.innerHTML = '<img src="' + photo.data + '" class="w-full h-full object-cover filter grayscale opacity-70 hover:opacity-100 hover:filter-none transition-all">' +
+                    '<button type="button" onclick="removePhoto(' + i + ')" class="absolute top-1 right-1 w-5 h-5 bg-black/70 text-white text-[10px] flex items-center justify-center rounded-full hover:bg-red-600 transition-colors">&times;</button>';
+                grid.appendChild(div);
+            });
+        }
+
+        function removePhoto(index) {
+            asesoriaPhotos.splice(index, 1);
+            updatePhotoPreview();
+        }
+
+        async function handleAsesoriaPhotos(input) {
+            for (const file of input.files) {
+                const compressed = await compressImage(file);
+                asesoriaPhotos.push({ name: file.name, data: compressed });
+            }
+            updatePhotoPreview();
+            input.value = '';
+        }
+
+        async function handleAsesoriaPhotosCamera(input) {
+            if (input.files && input.files[0]) {
+                const compressed = await compressImage(input.files[0]);
+                asesoriaPhotos.push({ name: input.files[0].name, data: compressed });
+                updatePhotoPreview();
+            }
+            input.value = '';
         }
 
         async function submitAsesoriaForm(e) {
